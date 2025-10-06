@@ -1,15 +1,22 @@
 /* Style général */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #121212;
+    color: #f5f5f5;
 }
 
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
+    background: linear-gradient(90deg, #0d0d0d, #1f1f1f);
+    color: #ffb84d;
+    padding: 25px;
     text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 /* Menu */
@@ -17,34 +24,42 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #333;
-    overflow: hidden;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
 .menu li {
-    float: left;
     position: relative;
 }
 
 .menu li a {
     display: block;
-    color: white;
+    color: #f5f5f5;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .menu li a:hover {
-    background-color: #111;
+    background-color: #333;
+    color: #ff9800;
+    border-radius: 6px;
 }
 
 /* Dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #222;
+    min-width: 180px;
     z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
 }
 
 .dropdown-content li {
@@ -52,22 +67,33 @@ header {
 }
 
 .dropdown-content li a {
-    color: black;
+    color: #f5f5f5;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
     text-align: left;
+    font-weight: 500;
 }
 
 .dropdown-content li a:hover {
-    background-color: #ddd;
+    background-color: #333;
+    color: #ff9800;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation dropdown */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Main content */
 main {
-    padding: 20px;
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
 }

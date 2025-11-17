@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sommaire</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles additionnels pour les sous-niveaux */
+        .sub-item {
+            margin: 0.8rem 0;
+        }
+        
+        .sub-header {
+            padding: 0.8rem 1.5rem;
+            background: #f0ebe8;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            color: #2a2a2a;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+        }
+        
+        .sub-header:hover {
+            background: #e8dfd9;
+            padding-left: 2rem;
+        }
+        
+        .sub-arrow {
+            font-size: 1rem;
+            color: #d4a5a5;
+            transition: transform 0.3s ease;
+        }
+        
+        .sub-item.active .sub-arrow {
+            transform: rotate(90deg);
+        }
+        
+        .sub-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .sub-item.active .sub-content {
+            max-height: 500px;
+        }
+        
+        .sub-content ul {
+            list-style: none;
+            padding: 1rem 0 1rem 2rem;
+        }
+        
+        .sub-content li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .sub-content a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .sub-content a:hover {
+            color: #d4a5a5;
+            border-bottom: 2px solid #d4a5a5;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio SI</h1>
+        <p class="subtitle">Chioukh Célia</p>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="rubriques-list">
+                <!-- Rubrique 1 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 1 :</span> Travaux Dirigés</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 1</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/TD 1 SI.pdf" target="_blank">📄 TD 1 SI</a></li>
+                                        <li><a href="rubrique 1/TD1 PGI.pdf" target="_blank">📄 TD1 PGI</a></li>
+                                        <li><a href="rubrique 1/PGI exercice.xls" target="_blank">📊 PGI exercice.xls</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 2</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/TD2 SI.pdf" target="_blank">📄 TD2 SI</a></li>
+                                        <li><a href="rubrique 1/TP Odoo.pdf" target="_blank">📄 TP Odoo</a></li>
+                                        <li><a href="rubrique 1/TP Odoo captures.pdf" target="_blank">📸 TP Odoo captures</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 3</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/training schéma acteur flux.pdf" target="_blank">📄 Training schéma acteur flux</a></li>
+                                        <li><a href="rubrique 1/Diagramme training schéma acteur flux.pdf" target="_blank">📄 Diagramme training schéma acteur flux</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 4</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/Processus organisationnel.pdf" target="_blank">📄 Processus organisationnel</a></li>
+                                        <li><a href="rubrique 1/Diagramme TD processus organisationnel.pdf" target="_blank">📄 Diagramme TD processus organisationnel</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 5</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/TP gant.pdf" target="_blank">📄 TP gant</a></li>
+                                        <li><a href="rubrique 1/TP gant résultat.pdf" target="_blank">📄 TP gant résultat</a></li>
+                                        <li><a href="rubrique 1/TD MCD.pdf" target="_blank">📄 TD MCD</a></li>
+                                        <li><a href="rubrique 1/MCD.pdf" target="_blank">📄 MCD</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-header" onclick="toggleSubItem(event, this)">
+                                    <span>TD 6</span>
+                                    <span class="sub-arrow">›</span>
+                                </div>
+                                <div class="sub-content">
+                                    <ul>
+                                        <li><a href="rubrique 1/Diagramme des classes.pdf" target="_blank">📄 Diagramme des classes</a></li>
+                                        <li><a href="rubrique 1/Exercices use case.pdf" target="_blank">📄 Exercices use case</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rubrique 2 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 2 :</span> Notes de Cours</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="rubrique 2/notes cours.pdf" target="_blank">📝 Notes cours</a></li>
+                            <li><a href="rubrique 2/cours information.pdf" target="_blank">📚 Cours information</a></li>
+                            <li><a href="rubrique 2/cours processus de gestion et modélisation.pdf" target="_blank">📚 Cours processus de gestion et modélisation</a></li>
+                            <li><a href="rubrique 2/cours gestion de projet.pdf" target="_blank">📚 Cours gestion de projet</a></li>
+                            <li><a href="rubrique 2/cours gestion de projet version étudiant.pdf" target="_blank">📚 Cours gestion de projet version étudiant</a></li>
+                            <li><a href="rubrique 2/cours les livrables phases SI.pdf" target="_blank">📚 Cours les livrables/phases SI</a></li>
+                            <li><a href="rubrique 2/cours Odoo.pdf" target="_blank">📚 Cours Odoo</a></li>
+                            <li><a href="rubrique 2/cours use case.pdf" target="_blank">📚 Cours use case</a></li>
+                            <li><a href="rubrique 2/SFG_TalentSeek.pdf" target="_blank">📚 SFG_TalentSeek</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Rubrique 3 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 3 :</span> Documents d'un Système d'Information</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="#cas">Cas d'étude</a></li>
+                            <li><a href="#uml">Diagrammes UML</a></li>
+                            <li><a href="#rapports">Rapports d'analyse</a></li>
+                            <li><a href="#modelisation">Modélisation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rubrique 4 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 4 :</span> Les Certifications</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="#certif1">Certificat professionnel</a></li>
+                            <li><a href="#certif2">Attestations de formation</a></li>
+                            <li><a href="#certif3">Badges numériques</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rubrique 5 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 5 :</span> Le Projet Final</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="#cahier">Cahier des charges</a></li>
+                            <li><a href="#documentation">Documentation technique</a></li>
+                            <li><a href="#livrable">Livrables</a></li>
+                            <li><a href="#rapport">Rapport final</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rubrique 6 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 6 :</span> Diaporama pour la Soutenance</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="#slides">Présentation PowerPoint</a></li>
+                            <li><a href="#script">Script de présentation</a></li>
+                            <li><a href="#demo">Support de démonstration</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Rubrique 7 -->
+                <div class="rubrique-item">
+                    <div class="rubrique-header" onclick="toggleRubrique(this)">
+                        <h3><span class="rubrique-number">Rubrique 7 :</span> Autres Ressources</h3>
+                        <span class="arrow">›</span>
+                    </div>
+                    <div class="rubrique-content">
+                        <ul>
+                            <li><a href="rubrique 7/annexe exemple cahier des charges intranet INRA.pdf" target="_blank">📎 Annexe exemple cahier des charges intranet INRA</a></li>
+                            <li><a href="rubrique 7/cahier des charges devis support.pdf" target="_blank">📎 Cahier des charges devis support</a></li>
+                            <li><a href="rubrique 7/Énoncé du projet.pdf" target="_blank">📎 Énoncé du projet</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>2025 | Page de Sommaire</p>
+    </footer>
+    
+    <script>
+        function toggleRubrique(element) {
+            const item = element.parentElement;
+            const allItems = document.querySelectorAll('.rubrique-item');
+            
+            allItems.forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+            
+            item.classList.toggle('active');
+        }
+        
+        function toggleSubItem(event, element) {
+            event.stopPropagation();
+            const subItem = element.parentElement;
+            subItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
